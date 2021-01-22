@@ -1,7 +1,12 @@
 import refs from './refs';
 
-function showBtn() {
-  refs.loadMoreBtn.classList.remove('is-hidden');
-};
+export default {
+  showBtn() {
+    refs.loadMoreBtn.classList.remove('is-hidden');
+  },
 
-export default showBtn;
+  hideBtn() {
+    refs.loadMoreBtn.classList.add('is-hidden');
+  },
+
+};

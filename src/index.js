@@ -1,7 +1,7 @@
 import './styles.css';
 import refs from './js/refs';
 import apiService from './js/apiService';
-import showBtn from './js/load-more-btn';
+import loadMoreBtn from './js/load-more-btn';
 import renderGallery from './js/render-gallery';
 
 refs.searchForm.addEventListener('submit', searchHandler);
@@ -20,6 +20,7 @@ function searchHandler(event) {
 function loadMoreHandler(event) {
   event.preventDefault();
   fetchImages();
+  scrollPage();
 };
 
 function fetchImages() {
@@ -28,12 +29,13 @@ function fetchImages() {
     .fetchImages()
     .then(images => {
       renderGallery(images);
-      
+
       if (images.length < 12) {
-        return;
+        loadMoreBtn.hideBtn();
       };
+
       if (images.length === 12) {
-        showBtn();
+        loadMoreBtn.showBtn();
       };
     })
     .catch(error => console.log(error));
@@ -41,4 +43,14 @@ function fetchImages() {
 
 function clearGallery() {
   refs.gallery.innerHTML = '';
+};
+
+function scrollPage() {
+    let value = refs.contentContainer.clientHeight;
+     setTimeout(() => {
+      window.scrollTo({
+        top: value,
+        behavior: 'smooth',
+      });
+    }, 500);
 };
