@@ -17,6 +17,7 @@ module.exports = env => ({
         include: paths.SRC_DIR,
         use: ['babel-loader'],
       },
+      { test: /\.handlebars$/, loader: "handlebars-loader" },
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
         use: [

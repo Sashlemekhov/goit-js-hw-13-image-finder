@@ -4,42 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Webpack Starter Kit</title>
-
-    <!-- Don't forget to delete this style tag. -->
-    <style>
-      body {
-        min-height: 100vh;
-        margin: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .intro {
-        text-align: center;
-      }
-
-      .intro h1 {
-        margin-top: 0;
-        font-weight: 500;
-        font-size: 40px;
-      }
-
-      .intro img {
-        display: block;
-        max-width: 100%;
-        height: auto;
-      }
-    </style>
+    <title>iFind Picture</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet" />
   </head>
 
-  <body>
-    <article class="intro">
-      <h1>Webpack starter kit</h1>
-
-      <!-- HTML image reference example. -->
-      <img src="./images/intro.png" alt="" width="640" />
-    </article>
-  </body>
+    <body>
+      <div class="main">
+        <div class="container a-container" id="a-container">
+          <ul class="gallery">
+          
+          </ul>
+          <div class="button is-hidden"><span>Show more</span></div>
+        </div>
+        <div class="switch" id="switch-cnt">
+          <div class="switch__circle"></div>
+          <div class="switch__circle switch__circle--t"></div>
+          <div class="switch__container" id="switch-c1">
+            <h1 class="switch__title title">iFind Picture</h1>
+            <form class="search-form" id="a-form" >
+              <input type="text" name="query" autocomplete="off" class="form__input" placeholder="I'm looking for...">
+              <button type="submit" class="button">Search</button>
+            </form>
+            <p class="switch__description description">Easy search for any images</p>
+          </div>
+        </div>
+      </div>
+      
+      
+    </body>
 </html>
